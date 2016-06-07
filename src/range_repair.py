@@ -56,7 +56,7 @@ class Token_Container:
         # This is a really well-specified value.  If the format of the
         # output of 'nodetool gossipinfo' changes, this will have to be
         # revisited.
-        search_regex = "DC(?:\d)?:{datacenter}".format(datacenter=self.options.datacenter)
+        search_regex = "DC(?::\d)?:{datacenter}".format(datacenter=self.options.datacenter)
         for paragraph in stdout.split("/"):
             if not re.search(search_regex, paragraph):
                 continue
